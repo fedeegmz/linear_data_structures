@@ -1,0 +1,6 @@
+__pycache__/
+venv/
+/pyramid_sum.py/
+/array.py/
+/grid.py/
+/grid-3.py/
