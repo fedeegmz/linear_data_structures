@@ -3,7 +3,7 @@ from types import NoneType
 from linked_lists.singly_linked_list import SinglyLinkedList
 
 command_list = ['info','exit', 'new singly_linked_list', 'linked_list.append()', 
-'linked_list.size()', 'linked_list.print()']
+'linked_list.size()', 'linked_list.print()', 'linked_list.tail()', 'linked_list.head()']
 
 def start():
     print("Welcome to play_with_linked_list")
@@ -41,6 +41,12 @@ def loop():
         elif command == 'linked_list.print()':
             for node in linked_list.iter():
                 print(f'{node} in {id(node)}')
+        
+        elif command == 'linked_list.tail()':
+            print(linked_list.tail)
+
+        elif command == 'linked_list.head()':
+            print(linked_list.head)
         
         elif command == 'exit':
             finished = True
