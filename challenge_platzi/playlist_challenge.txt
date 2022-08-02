@@ -1,0 +1,6 @@
+ Realizar un simulador de playlist musical.
+ Restricciones:
+     - Utilizar queues 
+     - Métodos añadir() y reproducir()
+     - Respetar FIFO: la primer canción en ser agregada 
+                         es la primera en reproducirse
