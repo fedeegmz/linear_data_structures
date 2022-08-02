@@ -3,28 +3,28 @@ from linked_lists.node import Node
 class Stack():
     def __init__(self):
         self.top = None
-        self.bottom = None
         self.__size__ = 0
     
 
     def peek(self):
         if self.top:
             return self.top.get_data()
-        elif self.bottom:
-            return self.bottom.get_data()
         else:
-            return "The stack is empty"
+            return None
+    
+
+    def bottom(self):
+        current = None
+        for data in self.iter():
+            current = data
+        return data
     
 
     def push(self, data):
         node = Node(data)
 
-        if self.bottom == None:
-            self.bottom = node
+        if self.top == None:
             self.top = node
-        elif self.top == None:
-            self.top = node
-            self.top.set_next(self.bottom)
         else:
             node.set_next(self.top)
             self.top = node
@@ -39,14 +39,9 @@ class Stack():
             self.__size__ -= 1
             return temporal.get_data()
         
-        elif self.bottom:
-            temporal = self.bottom
-            self.bottom = None
-            self.__size__ = 0
-            return temporal.get_data()
-
         else:
-            return "The stack is empty"
+            self.clear()
+            return None
     
 
     def size(self) -> str:
@@ -78,7 +73,6 @@ class Stack():
 
     def clear(self):
         self.top = None
-        self.bottom = None
         self.__size__ = 0
 
 
