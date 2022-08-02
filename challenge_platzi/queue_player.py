@@ -1,7 +1,8 @@
 from queues.node_based_queue import Queue
 from linked_lists.node import TwoWayNode
-from playlist import Playlist
-from track import Track
+from challenge_platzi.playlist import Playlist
+from challenge_platzi.track import Track
+from time import sleep
 
 class QueuePlayer(Queue):
 
@@ -19,8 +20,10 @@ class QueuePlayer(Queue):
     def play(self):
         """Play the first song"""
 
-        current_song: Track = super().dequeue()
-        print(f'Playing {current_song.title} 🎵🎵🎵')
+        for song in super().iter():
+            current_song: Track = super().dequeue()
+            print(f'Playing {current_song.title} 🎵🎵🎵')
+            sleep(current_song.duration)
     
     def add_to_queue(self, song: Track):
         """Add a song to the play queue"""

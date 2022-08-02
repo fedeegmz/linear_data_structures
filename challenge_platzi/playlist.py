@@ -1,5 +1,5 @@
 from queues.node_based_queue import Queue
-from track import Track
+from challenge_platzi.track import Track
 
 
 class Playlist(Queue):
