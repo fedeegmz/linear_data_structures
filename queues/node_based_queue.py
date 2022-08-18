@@ -9,6 +9,13 @@ class Queue():
     
 
     def enqueue(self, data):
+        """
+            Add a node to the queue
+
+            - Param:
+                - node: node to add
+        """
+
         node = TwoWayNode(data)
 
         if self.head == None:
@@ -34,6 +41,13 @@ class Queue():
     
 
     def dequeue(self):
+        """
+            Remove the first node from the queue
+
+            - Return:
+                - node.get_data():  the data of the first node
+        """
+
         if self.__size__ > 0:
             temporal = self.tail
             
@@ -49,10 +63,14 @@ class Queue():
 
 
     def size(self) -> str:
+        """ Returns the size of the queue """
+
         return str(self.__size__)
     
 
     def iter(self):
+        """ Returns the data of the nodes one by one, from the first to the last """
+
         current = self.tail
         while current:
             value = current.get_data()
@@ -61,6 +79,8 @@ class Queue():
     
 
     def __iterNode__(self):
+        """ Returns the nodes one by one, from the first to the last """
+
         current = self.tail
         while current:
             value = current
@@ -69,6 +89,13 @@ class Queue():
 
     
     def remove(self, data):
+        """
+            Remove a node from the queue
+
+            - Param:
+                - data: node data to delete
+        """
+
         if data == self.head.get_data():
             self.head = self.head.get_next()
             self.head.set_previous(None)
@@ -84,12 +111,16 @@ class Queue():
     
 
     def clear(self):
+        """ Empty the queue """
+
         self.head = None
         self.tail = None
         self.__size__ = 0
     
 
     def to_list(self) -> List:
+        """ Returns a list with the data of the nodes in the queue """
+
         new_list = []
         for data in self.iter():
             new_list.append(data)
@@ -98,5 +129,6 @@ class Queue():
 
 
     def print(self):
+        """ Print the data of the all nodes """
         for data in self.iter():
             print(data)
